@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esalaff.esalaff.ClientController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="362.0" style="-fx-background-color: teal;">
+         <children>
+            <Pane layoutY="423.0" prefHeight="103.0" prefWidth="362.0" style="-fx-background-color: #1ABC9C;" />
+            <Button layoutX="42.0" layoutY="446.0" mnemonicParsing="false" onAction="#tos1" prefHeight="57.0" prefWidth="113.0" style="-fx-background-color: white;" text="Back" textFill="#2b6f75">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <VBox layoutX="152.0" layoutY="100.0" prefHeight="260.0" prefWidth="176.0">
+               <children>
+                  <TextField fx:id="txtnom">
+                     <VBox.margin>
+                        <Insets bottom="8.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="29.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="txtprenom">
+                     <VBox.margin>
+                        <Insets bottom="8.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="29.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="txttele">
+                     <VBox.margin>
+                        <Insets bottom="8.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="29.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="txtemail">
+                     <VBox.margin>
+                        <Insets bottom="8.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="29.0" />
+                     </padding>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox layoutX="37.0" layoutY="110.0" prefHeight="200.0" prefWidth="64.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+                     <VBox.margin>
+                        <Insets bottom="35.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Apple SD Gothic Neo Regular" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom">
+                     <VBox.margin>
+                        <Insets bottom="35.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Apple SD Gothic Neo Regular" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Tel">
+                     <VBox.margin>
+                        <Insets bottom="35.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Apple SD Gothic Neo Regular" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                     <VBox.margin>
+                        <Insets bottom="35.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Apple SD Gothic Neo Regular" size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <Button fx:id="btnclear" layoutX="190.0" layoutY="446.0" mnemonicParsing="false" onAction="#clearfield" prefHeight="57.0" prefWidth="131.0" style="-fx-background-color: white;" text="Clear" textFill="#2f7c7b">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Button>
+            <Label layoutX="60.0" layoutY="29.0" text="Ajouter Client" textFill="WHITE">
+               <font>
+                  <Font name="Gill Sans" size="41.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TableView fx:id="tbv" layoutX="398.0" layoutY="109.0" onMouseClicked="#getData" prefHeight="313.0" prefWidth="470.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="49.0" text="ID" />
+          <TableColumn fx:id="col_nom" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="col_prenom" prefWidth="91.0" text="Prenom" />
+            <TableColumn fx:id="col_tele" prefWidth="105.0" text="Tele" />
+            <TableColumn fx:id="col_email" prefWidth="101.0" text="Email" />
+        </columns>
+      </TableView>
+      <Button fx:id="btndelete" layoutX="455.0" layoutY="458.0" mnemonicParsing="false" onAction="#deleteClient" prefHeight="57.0" prefWidth="119.0" style="-fx-background-color: teal;" text="Delete" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font></Button>
+      <Button fx:id="btnsave" layoutX="592.0" layoutY="458.0" mnemonicParsing="false" onAction="#createClient" prefHeight="57.0" prefWidth="113.0" style="-fx-background-color: teal;" text="Save" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnupdate" layoutX="723.0" layoutY="458.0" mnemonicParsing="false" onAction="#updateClient" prefHeight="57.0" prefWidth="113.0" style="-fx-background-color: teal;" text="Update" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Pane layoutX="362.0" prefHeight="40.0" prefWidth="541.0" style="-fx-background-color: #1ABC9C;" />
+      <Pane layoutX="362.0" layoutY="560.0" prefHeight="40.0" prefWidth="541.0" style="-fx-background-color: #1ABC9C;" />
+      <Text fill="#2d756b" layoutX="400.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des clients">
+         <font>
+            <Font name="Apple SD Gothic Neo Regular" size="25.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
